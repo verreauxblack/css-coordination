@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+*::after,
+*::before {
+    content: '';
+    position: absolute;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.area {
+    width: 400px;
+    height: 400px;
+}
+
+.circle-large {
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    border: 2.5px solid#00353f;
+}
+
+.circle-large::before {
+    width: 2px;
+    height: 398px;
+    left: 50%;
+    background: #00353f;
+}
+
+.circle-large::after {
+    width: 397.4px;
+    height: 2.5px;
+    top: 50%;
+    background: #00353f;
+}
+
+.circle-small {
+    --size: 196px;
+    width: var(--size);
+    height: var(--size);
+    box-shadow: 0 0 0 2px #00353f;
+    border-radius: 100%;
+    top: 100px;
+    left: 100px;
+    z-index: 2;
+    animation: counter 8s infinite linear;
+}
+
+@keyframes counter {
+    to {
+        transform: rotate(-360deg)
+    }
+}
+
+.bullseye {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 2px solid #00353f;
+    left: 50%;
+    margin-top: -10.5px;
+    margin-left: -9px;
+    animation: rotate 4s infinite linear;
+}
+
+.bullseye::before {
+    --size: 198px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 100px;
+    border: 2px solid #00FFFF;
+    left: -93px;
+    top: -93px;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.axis {
+    position: absolute;
+    background: #d46f4d;
+    border: 0;
+    z-index: 2;
+    margin: 0;
+}
+
+.axis.horizontal {
+    top: 6.5px;
+    left: -194px;
+    width: 400px;
+    height: 2px;
+}
+
+.axis.vertical {
+    top: -194px;
+    left: 6.5px;
+    width: 2px;
+    height: 400px;
+}
+
+.axis::before,
+.axis::after {
+    width: 16px;
+    height: 16px;
+    background: #7F00FF;
+    border-radius: 100%;
+}
+
+.axis::after {
+    bottom: -7px;
+    left: -7px;
+}
+
+.axis::before {
+    top: -8px;
+    right: -7.5px;
+}
+
+.bullet {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    border: 2px solid #7F00FF;
+    position: absolute;
+    top: 93.8px;
+    left: -6.85px;
+}
+
+.bullet:nth-child(2){
+    top: 293px;
+}
+
+.ellipse {
+    border: 2px solid #ff2104;
+    position: absolute;
+    border-radius: 100%;
+    width: 600px;
+    height: 200px;
+    top: 100px;
+    left: -100px;
+}
+
+.ellipse:nth-child(2) {
+    transform: rotate(45deg);
+}
+.ellipse:nth-child(3) {
+    transform: rotate(90deg);
+}
+.ellipse:nth-child(4) {
+    transform: rotate(135deg);
+}
