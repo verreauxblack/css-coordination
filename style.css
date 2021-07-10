@@ -17,6 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .area {
@@ -163,4 +164,9 @@
 }
 .ellipse:nth-child(4) {
     transform: rotate(135deg);
+}
+
+
+h4{
+    bottom: -140px;
 }
